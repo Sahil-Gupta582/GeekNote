@@ -11,9 +11,9 @@
 # production
 /build
 .eslintcache
-/.vscode
-/.github
-/.idea
+.vscode
+.github
+.idea
 # misc
 .DS_Store
 .env.local
