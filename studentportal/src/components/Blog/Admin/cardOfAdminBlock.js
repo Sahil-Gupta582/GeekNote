@@ -74,9 +74,10 @@ const CardofAdminBlock = ({
 
               {/* render tag's here */}
               <div className="for_tags_admin">
-                {tags.map((tag_name) => {
+                {tags.map((tag_name, id) => {
                   return (
                     <p
+                      key={id}
                       className="render_tag_admin"
                       style={{ border: `1.5px solid ${color_code[tag_name]}` }}
                     >

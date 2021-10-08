@@ -9,12 +9,13 @@ import CardofAdminBlock from "./cardOfAdminBlock";
 //testing live share
 
 function AdminBlog(props_tag_name) {
-  console.log("I am here");
   const propName = props_tag_name.tag.split(" ").join("%20");
   const [blogs_to_show, setBlogs] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/v1/blogs/?tags=${propName}`)
+      .get(
+        `https://geeknote-backend.herokuapp.com/api/v1/blogs/?tags=${propName}`
+      )
       .then((response) => {
         setBlogs(response.data.data.blogs);
 
@@ -61,6 +62,7 @@ function AdminBlog(props_tag_name) {
           {but_arr.map((but_number) => {
             return (
               <button
+                key={but_number}
                 style={{ background: "#293C5A", color: "#CCD6F6" }}
                 type="submit"
                 onClick={() => {
@@ -98,7 +100,7 @@ function AdminBlog(props_tag_name) {
 
       {blogs_to_show.map((blog_info, iteration_number) => {
         if (iteration_number >= start && iteration_number <= end) {
-          return <CardofAdminBlock key={blog_info.id} {...blog_info} />;
+          return <CardofAdminBlock key={blog_info.title} {...blog_info} />;
         } else {
           return null;
         }

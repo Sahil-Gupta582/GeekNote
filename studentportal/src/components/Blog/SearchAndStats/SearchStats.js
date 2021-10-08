@@ -18,7 +18,7 @@ function SearchStats({ transfer_data_tag }) {
             onInput={(e) => {
               setInput(e.target.value);
             }}
-            placeHolder="Search: Title, Topic, Writer"
+            placeholder="Search: Title, Topic, Writer"
           />
           <button
             onClick={() => {
@@ -35,6 +35,7 @@ function SearchStats({ transfer_data_tag }) {
             return (
               <p
                 className="render_tag"
+                key={tag_name.id}
                 style={{
                   cursor: "pointer",
                   border: `1.5px solid ${tag_name.color}`,
