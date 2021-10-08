@@ -76,10 +76,11 @@ const CardofStudentblog = ({
               <h4 style={{ fontFamily: "Robot Slab" }}>Blog Title - {title}</h4>
               {/* render tag's here */}
               <div className="for_tags_student">
-                {tags.map((tag_name) => {
+                {tags.map((tag_name, id) => {
                   return (
                     <p
                       className="render_tag_student"
+                      key={id}
                       style={{ border: `1.5px solid ${color_code[tag_name]}` }}
                     >
                       {tag_name}
